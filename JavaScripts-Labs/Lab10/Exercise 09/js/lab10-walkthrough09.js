@@ -5,7 +5,7 @@ $(function() {
     $("#consume").click(function() {
 
         var url =
-            "http://www.randyconnolly.com/funwebdev/services/travel/cities.php";
+            "https://www.randyconnolly.com/funwebdev/services/travel/cities.php";
 
         $("#results").html("<ul></ul>");
 
