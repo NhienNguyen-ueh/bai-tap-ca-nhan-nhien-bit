@@ -9,7 +9,7 @@ $(function() {
         $('.animLoading').show();
 
         var url =
-            "https://www.randyconnolly.com/funwebdev/services/travel/cities.php";
+            "http://www.randyconnolly.com/funwebdev/services/travel/cities.php";
 
         $.get(url)
 
