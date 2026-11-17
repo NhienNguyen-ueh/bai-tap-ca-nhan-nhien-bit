@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="Danh sách 8 Exercise của Lab09 – DOM and Events" name="description" />
+    <title>Lab09 · DOM and Events | Little JS Diary ♡</title>
+    <!-- Phông Nunito hỗ trợ đầy đủ dấu tiếng Việt, thống nhất với trang chủ -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        :root {
+            --accent: #ceb8f5;
+            --soft: #f3edff
+        }
+
+        :root {
+            font-family: "Nunito", "Segoe UI", Arial, sans-serif;
+            color: #675366;
+            background: #fffafd;
+            font-synthesis: none
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Nunito", "Segoe UI", Arial, sans-serif;
+            background: radial-gradient(circle at 9% 12%, var(--soft), transparent 35%), radial-gradient(circle at 90% 68%, #fff1e4, transparent 32%), #fffafd
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: inherit;
+            font-weight: 900;
+        }
+
+        .wrap {
+            width: min(1090px, calc(100% - 36px));
+            margin: auto
+        }
+
+        .top {
+            background: #ffffffdc;
+            border-bottom: 1px solid #efdee8
+        }
+
+        .nav {
+            min-height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px
+        }
+
+        .brand {
+            font-size: 19px;
+            font-weight: 900;
+            color: #ce83a4
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        .tiny-link {
+            font-size: 12px;
+            font-weight: 800;
+            padding: 10px 14px;
+            border-radius: 50px;
+            background: #fff0f6;
+            border: 1px solid #f4dbe5
+        }
+
+        .tiny-link[aria-current="page"] {
+            background: var(--accent);
+            color: #553b51
+        }
+
+        .intro {
+            display: grid;
+            grid-template-columns: 1fr 285px;
+            align-items: center;
+            gap: 35px;
+            padding: 76px 0 35px
+        }
+
+        .eyebrow {
+            display: inline-block;
+            color: #b57694;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: #fff;
+            padding: 9px 17px;
+            border: 1px solid #f1dbe6;
+            border-radius: 100px
+        }
+
+        .title {
+            font-size: clamp(44px, 6vw, 76px);
+            line-height: 1.06;
+            letter-spacing: -2.5px;
+            margin: 20px 0
+        }
+
+        .title span {
+            color: #d78baa
+        }
+
+        .intro p {
+            line-height: 1.9;
+            font-size: 15px;
+            color: #8b7688;
+            max-width: 640px
+        }
+
+        .cat-wrap {
+            background: var(--soft);
+            border: 3px solid #fff;
+            border-radius: 44px;
+            min-height: 255px;
+            display: grid;
+            place-items: center;
+            position: relative;
+            box-shadow: 10px 12px 0 #eddbe5;
+            transform: rotate(3deg)
+        }
+
+        .cat-wrap svg {
+            width: 230px;
+            max-width: 86%;
+            filter: drop-shadow(1px 7px 0 #ead4dc)
+        }
+
+        .cat-wrap .sticker {
+            position: absolute;
+            top: 9px;
+            right: 18px;
+            font-size: 32px
+        }
+
+        .cat-wrap .bubble {
+            position: absolute;
+            bottom: 19px;
+            right: -10px;
+            background: #fff;
+            border-radius: 20px;
+            padding: 9px 13px;
+            color: #bc7c9d;
+            font-size: 11px;
+            font-weight: 900;
+            transform: rotate(-8deg)
+        }
+
+        .section-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 15px;
+            margin: 30px 0 20px;
+            flex-wrap: wrap
+        }
+
+        .section-bar h2 {
+            font-size: 29px;
+            margin: 6px 0
+        }
+
+        .section-bar small {
+            color: #ac8199;
+            font-weight: 900;
+            letter-spacing: 1.5px
+        }
+
+        .count {
+            font-weight: 900;
+            font-size: 13px;
+            background: #fff;
+            border: 1px solid #f1dce6;
+            padding: 11px 17px;
+            border-radius: 50px
+        }
+
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px
+        }
+
+        .exercise {
+            position: relative;
+            min-height: 160px;
+            background: #fff;
+            border: 2px solid #fff;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px #cc9cb425;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 22px 23px;
+            transition: transform .18s, box-shadow .18s;
+            border-bottom: 5px solid var(--accent)
+        }
+
+        .exercise:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 23px #cc9cb440
+        }
+
+        .exercise:focus-visible,
+        .tiny-link:focus-visible {
+            outline: 3px solid #8e6681;
+            outline-offset: 3px
+        }
+
+        .exercise:nth-child(3n+1) {
+            background: #fff4f8
+        }
+
+        .exercise:nth-child(3n+2) {
+            background: #f6f0ff
+        }
+
+        .exercise:nth-child(3n) {
+            background: #fff9e8
+        }
+
+        .exercise .num {
+            font-size: 12px;
+            font-weight: 900;
+            color: #b88ba2;
+            letter-spacing: 2px
+        }
+
+        .exercise strong {
+            font-size: 24px;
+            letter-spacing: -.5px;
+            margin: 18px 0 4px
+        }
+
+        .exercise .open {
+            font-size: 12px;
+            color: #99758e;
+            margin-top: auto;
+            font-weight: 800
+        }
+
+        .exercise .deco {
+            position: absolute;
+            right: 20px;
+            top: 19px;
+            font-size: 25px
+        }
+
+        .help {
+            margin: 31px 0 70px;
+            background: #fff;
+            border: 1px dashed #e7bdd0;
+            border-radius: 22px;
+            padding: 20px 24px;
+            color: #806c7c;
+            font-size: 13px;
+            line-height: 1.9
+        }
+
+        .help code {
+            background: #faeff4;
+            padding: 3px 6px;
+            border-radius: 5px;
+            font-size: 12px
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: #a7899e;
+            font-size: 12px;
+            border-top: 1px solid #f0e0e8
+        }
+
+        .back {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: #c27697;
+            font-size: 12px;
+            font-weight: 900
+        }
+
+        .back:hover {
+            text-decoration: underline
+        }
+
+        @media(max-width:850px) {
+            .exercise-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr))
+            }
+
+            .intro {
+                grid-template-columns: 1fr 220px
+            }
+        }
+
+        @media(max-width:650px) {
+            .nav {
+                align-items: flex-start;
+                padding: 17px 0;
+                flex-direction: column
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 50px 0 20px
+            }
+
+            .intro p {
+                margin: auto
+            }
+
+            .cat-wrap {
+                width: min(280px, 90%);
+                margin: 4px auto 10px
+            }
+
+            .section-bar {
+                align-items: center
+            }
+
+            .exercise-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 11px
+            }
+
+            .exercise {
+                padding: 17px 15px;
+                min-height: 143px
+            }
+
+            .exercise strong {
+                font-size: 20px
+            }
+
+            .exercise .deco {
+                right: 13px;
+                top: 13px
+            }
+
+            .title {
+                font-size: 48px
+            }
+
+            .section-bar h2 {
+                font-size: 24px
+            }
+        }
+
+        @media(max-width:360px) {
+            .exercise-grid {
+                grid-template-columns: 1fr
+            }
+
+            .exercise {
+                min-height: 125px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                transition: none !important;
+                scroll-behavior: auto !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="top">
+        <nav aria-label="Điều hướng các Lab" class="wrap nav"><a class="brand" href="../index.html">🐱 little js diary
+                ♡</a>
+            <div class="nav-right"><a class="tiny-link" href="../index.html">⌂ Trang chủ</a><a class="tiny-link"
+                    href="../Lab08/">Lab 08</a><a aria-current="page" class="tiny-link" href="../Lab09/">Lab 09</a><a
+                    class="tiny-link" href="../Lab10/">Lab 10</a></div>
+        </nav>
+    </header>
+    <main class="wrap">
+        <section class="intro">
+            <div><a class="back" href="../index.html">← Quay về trang chủ</a><br /><span class="eyebrow"
+                    style="margin-top:26px">✿ MY CODING JOURNEY ✿</span>
+                <h1 class="title">Lab <span>09</span> <span aria-hidden="true">♡</span></h1>
+                <p><strong>JavaScript 2: DOM and Events</strong><br />DOM • Events • Forms • Validation.</p>
+                <p>Chọn một tấm thẻ bên dưới để mở bài tập tương ứng nhé! ✨</p>
+            </div>
+            <div class="cat-wrap"><svg aria-label="Sticker mèo con màu kem dễ thương" role="img" viewbox="0 0 280 260">
+                    <path
+                        d="M57 118 Q50 52 81 29 L113 65 Q144 54 172 65 L207 27 Q239 54 226 120 Q252 164 226 199 Q204 231 140 229 Q73 229 54 191 Q29 152 57 118Z"
+                        fill="#fff8e9" stroke="#947286" stroke-linejoin="round" stroke-width="5"></path>
+                    <path d="M78 49 L94 80 L111 71Z M179 70 L205 47 L203 85Z" fill="#ffc4d4"></path>
+                    <ellipse cx="103" cy="138" fill="#6f5265" rx="8" ry="11"></ellipse>
+                    <ellipse cx="181" cy="138" fill="#6f5265" rx="8" ry="11"></ellipse>
+                    <ellipse cx="81" cy="159" fill="#ffcfdb" rx="17" ry="10"></ellipse>
+                    <ellipse cx="204" cy="159" fill="#ffcfdb" rx="17" ry="10"></ellipse>
+                    <path d="M134 155 Q140 162 147 155 L140 152Z" fill="#d98ca7"></path>
+                    <path d="M140 161 Q128 176 118 165 M140 161 Q152 176 163 165" fill="none" stroke="#947286"
+                        stroke-linecap="round" stroke-width="3.5"></path>
+                    <path d="M74 166 L41 158 M75 177 L43 181 M209 166 L241 159 M207 177 L240 181" stroke="#947286"
+                        stroke-linecap="round" stroke-width="3"></path>
+                    <ellipse cx="102" cy="220" fill="#fff8e9" rx="26" ry="17" stroke="#947286" stroke-width="4">
+                    </ellipse>
+                    <ellipse cx="178" cy="220" fill="#fff8e9" rx="26" ry="17" stroke="#947286" stroke-width="4">
+                    </ellipse>
+                </svg><span class="sticker">🪻</span><span class="bubble">you got this! ♡</span></div>
+        </section>
+        <section aria-labelledby="exercise-heading">
+            <div class="section-bar">
+                <div><small>LET'S PRACTICE ♡</small>
+                    <h2 id="exercise-heading">Danh sách bài tập 🐾</h2>
+                </div><span class="count">8 Exercises</span>
+            </div>
+            <div class="exercise-grid"><a aria-label="Mở Exercise 01" class="exercise"
+                    href="Exercise 01/lab09-walkthrough01.html"><span class="num">BÀI TẬP 01</span><span
+                        aria-hidden="true" class="deco">🐾</span><strong>Exercise
+                        01</strong><span class="open">Xem bài tập ↗</span></a>
+                <a aria-label="Mở Exercise 02" class="exercise" href="Exercise 02/lab09-walkthrough02.html"><span
+                        class="num">BÀI TẬP
+                        02</span><span aria-hidden="true" class="deco">🎀</span><strong>Exercise 02</strong><span
+                        class="open">Xem bài tập ↗</span></a>
+                <a aria-label="Mở Exercise 03" class="exercise" href="Exercise 03/lab09-walkthrough03.html"><span
+                        class="num">BÀI TẬP
+                        03</span><span aria-hidden="true" class="deco">🐱</span><strong>Exercise 03</strong><span
+                        class="open">Xem bài tập ↗</span></a>
+                <a aria-label="Mở Exercise 04" class="exercise" href="Exercise 04/lab09-walkthrough04.html"><span
+                        class="num">BÀI TẬP
+                        04</span><span aria-hidden="true" class="deco">🌸</span><strong>Exercise 04</strong><span
+                        class="open">Xem bài tập ↗</span></a>
+                <a aria-label="Mở Exercise 05" class="exercise" href="Exercise 05/lab09-walkthrough05.html"><span
+                        class="num">BÀI TẬP
+                        05</span><span aria-hidden="true" class="deco">✨</span><strong>Exercise 05</strong><span
+                        class="open">Xem bài tập ↗</span></a>
+                <a aria-label="Mở Exercise 06" class="exercise" href="Exercise 06/lab09-walkthrough05.html"><span
+                        class="num">BÀI TẬP
+                        06</span><span aria-hidden="true" class="deco">🐾</span><strong>Exercise 06</strong><span
+                        class="open">Xem bài tập ↗</span></a>
+                <a aria-label="Mở Exercise 07" class="exercise" href="Exercise 07/lab09-walkthrough07.html"><span
+                        class="num">BÀI TẬP
+                        07</span><span aria-hidden="true" class="deco">🎀</span><strong>Exercise 07</strong><span
+                        class="open">Xem bài tập ↗</span></a>
+                <a aria-label="Mở Exercise 08" class="exercise" href="Exercise 08/lab09-walkthrough08.html"><span
+                        class="num">BÀI TẬP
+                        08</span><span aria-hidden="true" class="deco">🐱</span><strong>Exercise 08</strong><span
+                        class="open">Xem bài tập ↗</span></a>
+
+            </div>
+
+        </section>
+    </main>
+    <footer class="footer">made with love &amp; a little bit of JavaScript ♡ · Lab09</footer>
+</body>
+
+</html>
