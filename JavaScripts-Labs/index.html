@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio học tập JavaScript: Lab 08, Lab 09 và Lab 10 – môn Phát triển ứng dụng thương mại điện tử.">
+  <meta name="theme-color" content="#fff1f7">
+  <title>My Little JavaScript Diary ♡ | JavaScript Labs</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Bỏ qua menu</a>
+  <div class="floating-paws" aria-hidden="true">✿ &nbsp; ♡ &nbsp; 🐾 &nbsp; ✦</div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="#home" aria-label="Về đầu trang"><span class="logo-icon">🐱</span> little js diary<span class="logo-heart">♡</span></a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Mở menu">☰</button>
+      <nav id="main-nav" class="main-nav" aria-label="Điều hướng chính">
+        <a href="#about">About me</a><a href="#labs">My labs</a><a href="#skills">What I learned</a><a href="#reflection">Reflection</a>
+      </nav>
+      <span class="header-pill" aria-hidden="true">made with ♡</span>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow">✿ WELCOME TO MY LITTLE CORNER ✿</span>
+        <h1 id="hero-title">My <span>JavaScript</span><br>Learning Diary <span class="heading-flower">✿</span></h1>
+        <p>Xin chào! Đây là góc nhỏ ghi lại hành trình thực hành JavaScript của mình trong môn <strong>Phát triển ứng dụng thương mại điện tử</strong> — từ những dòng lệnh đầu tiên đến các tương tác thú vị trên website.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#labs">Khám phá 3 bài Lab <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#about">Gặp mình nha ♡</a></div>
+        <div class="hero-tags"><span>✦ HTML & CSS</span><span>✦ JavaScript</span><span>✦ jQuery</span></div>
+      </div>
+      <div class="hero-art" aria-label="Minh họa mèo con đáng yêu giữa những ngôi sao">
+        <span class="star star-a" aria-hidden="true">✦</span><span class="star star-b" aria-hidden="true">✿</span><span class="star star-c" aria-hidden="true">♡</span>
+        <div class="cat-card"><span class="cat-card-label">coding buddy ♡</span>
+          <svg class="cat-hero" viewBox="0 0 340 320" role="img" aria-label="Sticker chú mèo con màu kem đang vẫy tay">
+            <ellipse cx="174" cy="293" rx="112" ry="15" fill="#f3cbdc" opacity=".6"/>
+            <path d="M98 134 Q91 70 119 48 L152 83 Q178 76 211 84 L250 47 Q270 79 257 141 Q283 192 251 235 Q217 270 167 267 Q112 265 89 224 Q68 181 98 134Z" fill="#fff6e9" stroke="#8d6879" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M113 67 L128 102 L145 91Z M219 91 L244 67 L241 112Z" fill="#ffb9cb"/>
+            <ellipse cx="135" cy="158" rx="10" ry="13" fill="#634a59"/><ellipse cx="214" cy="158" rx="10" ry="13" fill="#634a59"/>
+            <ellipse cx="112" cy="178" rx="21" ry="12" fill="#ffc4d0" opacity=".75"/><ellipse cx="236" cy="178" rx="21" ry="12" fill="#ffc4d0" opacity=".75"/>
+            <path d="M168 178 Q175 185 182 178 Q178 174 175 176Z" fill="#e995ac"/><path d="M175 183 Q165 199 154 187 M175 183 Q185 199 197 187" fill="none" stroke="#8d6879" stroke-width="4" stroke-linecap="round"/>
+            <path d="M107 187 L74 181 M109 197 L72 201 M242 187 L273 182 M241 198 L276 204" fill="none" stroke="#8d6879" stroke-width="3.3" stroke-linecap="round"/>
+            <ellipse cx="145" cy="257" rx="27" ry="18" fill="#fff6e9" stroke="#8d6879" stroke-width="5"/><ellipse cx="208" cy="256" rx="27" ry="18" fill="#fff6e9" stroke="#8d6879" stroke-width="5"/>
+            <path d="M250 230 Q291 216 289 177 Q287 156 272 164 Q256 173 264 194" fill="none" stroke="#8d6879" stroke-width="16" stroke-linecap="round"/>
+            <path d="M250 230 Q291 216 289 177 Q287 156 272 164 Q256 173 264 194" fill="none" stroke="#fff6e9" stroke-width="10" stroke-linecap="round"/>
+            <path d="M148 220 Q174 238 200 220" fill="none" stroke="#e6b5c6" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <div class="speech-bubble">you can do it! ✨</div>
+        </div>
+        <span class="art-caption">a tiny step every day ♡</span>
+      </div>
+    </section>
+
+    <section class="section wrap about-section" id="about" aria-labelledby="about-title">
+      <div class="section-heading"><p class="overline">01 / LITTLE INTRODUCTION</p><h2 id="about-title">A little about <em>me</em> <span aria-hidden="true">♡</span></h2><p>Thông tin sinh viên &amp; hành trình học tập</p></div>
+      <div class="about-grid">
+        <article class="profile-card paper-card">
+          <div class="profile-avatar" aria-label="Ảnh đại diện minh họa hình mèo – cần thay bằng ảnh cá nhân nếu muốn">🐱<span class="avatar-sparkle">✧</span></div>
+          <div class="profile-info"><span class="mini-label">STUDENT PROFILE</span><h3>[Họ và tên sinh viên]</h3><p class="profile-caption">JavaScript learner · UEH ♡</p>
+            <dl class="info-list"><div><dt>🎀 Mã số sinh viên</dt><dd>[Nhập MSSV]</dd></div><div><dt>📚 Lớp học phần</dt><dd>[Nhập lớp học phần]</dd></div><div><dt>💌 Môn học</dt><dd>Phát triển ứng dụng TMĐT</dd></div></dl>
+            <a class="social-link" href="#" data-placeholder-link="github" target="_blank" rel="noopener noreferrer">GitHub của mình <span aria-hidden="true">↗</span></a>
+          </div><span class="sticker sticker-profile" aria-hidden="true">✿</span>
+        </article>
+        <article class="intro-card paper-card"><span class="sticker-top" aria-hidden="true">🐾</span><span class="mini-label">DEAR DIARY,</span><h3>Hành trình 3 bài Lab của mình ✨</h3><p>Qua <strong>Lab 08, Lab 09 và Lab 10</strong>, mình thực hành các kiến thức JavaScript nền tảng, thao tác DOM, xử lý sự kiện và sử dụng jQuery. Mục tiêu là hiểu cách biến một trang web tĩnh thành trải nghiệm có tương tác với người dùng.</p><p>Trong ứng dụng thương mại điện tử, JavaScript có thể hỗ trợ kiểm tra biểu mẫu, cập nhật giỏ hàng, thay đổi thông tin sản phẩm và tạo hiệu ứng giúp việc mua sắm thuận tiện hơn.</p><div class="note-strip">note to self: keep learning, keep growing ♡</div></article>
+      </div>
+    </section>
+
+    <section class="section labs-section" id="labs" aria-labelledby="labs-title"><div class="wrap">
+      <div class="section-heading"><p class="overline">02 / MY PROJECTS</p><h2 id="labs-title">Explore my <em>labs</em> <span aria-hidden="true">✿</span></h2><p>Chọn một bài Lab để xem các Exercise mình đã thực hiện nhé!</p></div>
+      <div class="lab-grid">
+        <article class="lab-card lab-pink"><div class="lab-top"><span class="lab-number">LAB 08</span><span class="lab-deco" aria-hidden="true">🐈</span></div><div class="lab-symbol" aria-hidden="true">{ js }</div><h3>Language Foundations</h3><p>JavaScript 1 · Làm quen với nền tảng ngôn ngữ lập trình</p><ul><li>Biến, kiểu dữ liệu &amp; hàm</li><li>String, Date, Array &amp; Object</li><li>Browser Console</li></ul><a class="lab-button" href="Lab08/">Mở Lab 08 <span aria-hidden="true">↗</span></a></article>
+        <article class="lab-card lab-lavender"><div class="lab-top"><span class="lab-number">LAB 09</span><span class="lab-deco" aria-hidden="true">🐱</span></div><div class="lab-symbol" aria-hidden="true">&lt;/&gt;</div><h3>DOM and Events</h3><p>JavaScript 2 · Tạo các tương tác trực tiếp với trang web</p><ul><li>Truy xuất &amp; thay đổi DOM</li><li>Click, mouseover, mouseout</li><li>Form &amp; kiểm tra dữ liệu</li></ul><a class="lab-button" href="Lab09/">Mở Lab 09 <span aria-hidden="true">↗</span></a></article>
+        <article class="lab-card lab-yellow"><div class="lab-top"><span class="lab-number">LAB 10</span><span class="lab-deco" aria-hidden="true">🐾</span></div><div class="lab-symbol" aria-hidden="true">$( )</div><h3>jQuery</h3><p>JavaScript 3 · Khám phá thư viện và hiệu ứng sinh động</p><ul><li>jQuery Selectors &amp; Events</li><li>DOM &amp; Animation</li><li>GET Requests &amp; jqXHR</li></ul><a class="lab-button" href="Lab10/">Mở Lab 10 <span aria-hidden="true">↗</span></a></article>
+      </div><p class="lab-footnote">✧ Các nút dẫn đến trang <code>index.html</code> của mỗi thư mục Lab. Đảm bảo mỗi Lab có trang đó trước khi đăng GitHub Pages.</p>
+    </div></section>
+
+    <section class="section wrap" id="skills" aria-labelledby="skills-title"><div class="section-heading"><p class="overline">03 / WHAT I LEARNED</p><h2 id="skills-title">Little lessons, <em>big progress</em> <span aria-hidden="true">♡</span></h2><p>Những kiến thức và kỹ năng mình được thực hành qua từng Lab</p></div>
+      <div class="skills-grid"><article class="skill-card paper-card"><div class="skill-icon pink">🌷</div><h3>Lab 08 · Nền tảng</h3><p>Mình đã làm quen với cú pháp JavaScript, khai báo biến, kiểu dữ liệu và xây dựng hàm. Mình cũng thực hành xử lý chuỗi, ngày tháng, mảng, đối tượng và kiểm tra kết quả bằng Console.</p></article><article class="skill-card paper-card"><div class="skill-icon purple">🧸</div><h3>Lab 09 · DOM &amp; Events</h3><p>Mình học cách tìm và cập nhật phần tử HTML, thêm hoặc xóa nội dung, phản hồi thao tác chuột và kiểm tra dữ liệu nhập vào biểu mẫu để giao diện có tương tác.</p></article><article class="skill-card paper-card"><div class="skill-icon yellow">🍮</div><h3>Lab 10 · jQuery</h3><p>Mình luyện tập chọn phần tử với jQuery, xử lý sự kiện, thao tác DOM, tạo hiệu ứng chuyển động và tìm hiểu cách gửi GET Request để nhận dữ liệu qua jqXHR.</p></article></div>
+    </section>
+
+    <section class="section reflection-section" id="reflection" aria-labelledby="reflection-title"><div class="wrap reflection-layout"><div class="reflection-head"><p class="overline">04 / FINAL THOUGHTS</p><h2 id="reflection-title">A note to <em>future me</em> 💌</h2><p>Góc tự đánh giá sau 3 bài thực hành</p><div class="small-cat" aria-hidden="true">🐱<span>♡</span></div></div><article class="reflection-paper"><span class="tape" aria-hidden="true"></span><p class="draft-note">✏️ ĐOẠN MẪU — HÃY CHỈNH THEO TRẢI NGHIỆM THẬT CỦA BẠN</p><p>Qua ba bài Lab, mình hiểu rõ hơn cách JavaScript giúp trang web hoạt động linh hoạt thay vì chỉ hiển thị nội dung tĩnh. Ở Lab 08, mình luyện tập cú pháp, biến, hàm và cách xử lý dữ liệu. Sang Lab 09, mình thấy phần DOM và sự kiện đặc biệt hữu ích vì có thể thay đổi giao diện dựa trên thao tác của người dùng. Lab 10 giúp mình tiếp cận jQuery và các hiệu ứng, tuy nhiên mình cần luyện tập thêm để hiểu chắc cách dùng thư viện và xử lý yêu cầu lấy dữ liệu. Trong website thương mại điện tử, mình có thể áp dụng những kiến thức này để kiểm tra biểu mẫu, thay đổi số lượng sản phẩm và cập nhật giỏ hàng. Thời gian tới, mình muốn cải thiện kỹ năng gỡ lỗi, tổ chức mã và thiết kế giao diện tương thích nhiều thiết bị.</p><span class="signature">with love, a JS learner ♡</span></article></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><div><span class="footer-logo">🐱 little js diary ♡</span><p>Bài thực hành Chương 4 · JavaScript | Phát triển ứng dụng TMĐT</p></div><div class="footer-right"><a href="#home">Back to top ↑</a><small>© <span id="year">2026</span> · Made with curiosity &amp; love</small></div></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
 
