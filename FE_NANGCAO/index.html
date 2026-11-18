@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puppy Diary | Nhật ký học tập</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+  <div class="paw paw-1">🐾</div>
+  <div class="paw paw-2">🐾</div>
+  <div class="paw paw-3">🐾</div>
+
+  <div class="container">
+
+    <header class="header">
+      <a class="brand" href="index.html">
+        <span class="logo-desktop">🐶 Puppy Diary</span>
+        <span class="logo-tablet">🐕 Puppy Pad</span>
+        <span class="logo-mobile">🐾 Pup</span>
+      </a>
+      <span class="header-tag">My Learning Journal ♡</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="badge">WELCOME TO MY LITTLE WORLD ♡</span>
+          <h1>Woof woof! <span>Xin chào!</span> 🐶</h1>
+          <p>
+            Chào mừng bạn đến với góc học tập nhỏ xinh
+            của mình. Cùng khám phá những điều mình
+            đã học hôm nay nhé!
+          </p>
+          <a class="hero-button" href="#about">
+            Khám phá ngay 🐾
+          </a>
+        </div>
+        <div class="puppy-art">
+          <span class="heart">♡ ♡</span>
+          <span class="puppy">🐶</span>
+          <span class="puppy-caption">stay pawsitive!</span>
+        </div>
+      </section>
+
+      <div class="section-heading">
+        <h2>✿ My Little Profile</h2>
+        <p>Một chút thông tin về mình</p>
+      </div>
+
+      <section class="card profile-card" id="about">
+        <div class="profile-avatar">🐕</div>
+        <div class="profile-info">
+          <h3>Hello, I'm a student! ♡</h3>
+          <div class="info-grid">
+            <div class="info-item">
+              <span>🌷 Họ và tên</span>
+              <strong>Nguyen Muoi Nhien</strong>
+            </div>
+            <div class="info-item">
+              <span>🎒 Lớp</span>
+              <strong>EE0001</strong>
+            </div>
+            <div class="info-item">
+              <span>🐾 MSSV</span>
+              <strong>31241026871</strong>
+            </div>
+            <div class="info-item">
+              <span>📚 Lớp học phần</span>
+              <strong>26C1INF50902701</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-heading">
+        <h2>✿ Today's Learning</h2>
+        <p>Hôm nay mình đã học được gì?</p>
+      </div>
+
+      <section class="learning-grid">
+        <article class="card learning-card">
+          <div class="card-icon">🦖</div>
+          <span class="lesson-tag">LESSON 01</span>
+          <h3>Hack Chrome Dino</h3>
+          <p>
+            Hôm nay mình đã học cách sử dụng
+            Console trong Chrome DevTools để
+            chỉnh sửa game Dino, bao gồm tốc độ,
+            độ cao khi nhảy và chế độ bất tử.
+          </p>
+        </article>
+
+        <article class="card learning-card">
+          <div class="card-icon">📱</div>
+          <span class="lesson-tag">LESSON 02</span>
+          <h3>Responsive Website</h3>
+          <p>
+            Mình đã học cách sử dụng CSS Media Queries
+            để giao diện thích ứng với Desktop, Tablet
+            và Mobile. Logo sẽ thay đổi tương ứng
+            khi kích thước màn hình thay đổi.
+          </p>
+        </article>
+      </section>
+
+      <section class="card responsive-card">
+        <h2>🐾 Responsive Playground</h2>
+        <p>
+          Hãy thử thu nhỏ hoặc phóng to trình duyệt
+          để thấy logo trên thanh đầu trang thay đổi!
+        </p>
+        <div class="screen-info">
+          <div>
+            <span>Thiết bị hiện tại</span>
+            <strong id="device-type">Desktop</strong>
+          </div>
+          <div>
+            <span>Độ rộng màn hình</span>
+            <strong id="screen-width">0px</strong>
+          </div>
+        </div>
+        <div class="responsive-hint" id="responsive-hint">
+          🖥️ Bạn đang xem giao diện Desktop!
+        </div>
+      </section>
+
+      <div class="section-heading">
+        <h2>✿ My Homework</h2>
+        <p>Bài tập thực hành hôm nay</p>
+      </div>
+
+      <section class="card homework-card">
+        <div class="homework-icon">📖</div>
+        <h3>Bài tập số 1</h3>
+        <p>
+          Nhấn vào nút bên dưới để mở
+          bài tập HTML hôm nay nhé!
+        </p>
+        <a href="./Bai1.html" class="homework-button">
+          Mở Bai1.html ♡
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-puppy">🐶 🐾 ♡</div>
+      <p>Made with love & little paws</p>
+      <p id="today-date"></p>
+      <small>© 2026 Puppy Diary</small>
+    </footer>
+  </div>
+
+  <button id="top-button" aria-label="Về đầu trang">↑</button>
+
+</body>
+</html>
