@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#f6ebdd">
+    <title>Doodly Tasks — Góc nhỏ của bạn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
+    <div class="grain"></div>
+    <header class="topbar"><a class="brand" href="/"><span class="brand-mark">✿</span><span>Doodly
+                <b>Tasks</b><small>góc nhỏ của bạn</small></span></a>
+        <div class="today"><strong id="dateLabel"></strong><span id="dayCount">Đang tải…</span></div>
+        <nav id="nav"><a href="/">Trang chủ</a><a href="/tasks">Công việc</a><a href="/statistics">Thống kê</a><a
+                href="/history">Nhật ký</a><a href="/settings">Tùy chỉnh</a></nav><button class="menu" id="menu"
+            aria-label="Mở menu">☰</button>
+    </header>
+    <main id="app" class="page"></main>
+    <div id="toast" role="status" class="toast"></div>
+    <dialog id="editDialog">
+        <form id="editForm" class="notebook" method="dialog"><button class="close" aria-label="Đóng">×</button>
+            <h2>Chỉnh sửa việc nhỏ</h2><input type="hidden" name="id"><label>Tên công việc<input name="title"
+                    maxlength="150" required></label><label>Mô tả<textarea name="description" maxlength="2000"
+                    rows="3"></textarea></label>
+            <div class="form-row"><label>Danh mục<select name="category_id" required></select></label><label>Ưu
+                    tiên<select name="priority">
+                        <option value="low">Nhẹ nhàng</option>
+                        <option value="medium">Vừa phải</option>
+                        <option value="high">Quan trọng</option>
+                    </select></label></div>
+            <div class="form-row"><label>Ngày hạn<input name="due_date" type="date"></label><label>Giờ<input
+                        name="due_time" type="time"></label></div><button class="btn coral">Lưu thay đổi</button>
+        </form>
+    </dialog>
+    <script src="/js/app.js" defer></script>
+</body>
+
+</html>

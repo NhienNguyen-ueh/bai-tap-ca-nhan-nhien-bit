@@ -1,0 +1,22 @@
+{
+  "name": "doodly-tasks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A cozy Vietnamese doodle-style task manager backed by SQLite",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "db:migrate": "node backend/database/migrate.js",
+    "db:seed": "node backend/database/seed.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
